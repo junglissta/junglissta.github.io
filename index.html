@@ -10,13 +10,18 @@
 </head>
 <body>
     <h1>Vigenere code</h1>
-    <py-script>
+    <input type = "text" id = "message"/>
+    <h1>Key</h1>
+    <input type="text" id="keyword"/>
+    <button id = "submit-button" type = "submit" pys-onClick="vigenere_code">OK</button>
+    <div id="test-output"></div>
+<py-script>
         alphabet = 'abcdefghijklmnopqrstuvwxyz'
         alphabet_list = list(alphabet)
-        def vigenere_code():
-            message = input('Type message: ')
-            keyword = input('Type keyword: ')
-            message = message.lower()
+        def vigenere_code(message):
+            
+            message = Element('message').element.value
+            keyword = Element('keyword').element.value
             decoded_text = ''
             premena = ''
 
@@ -35,9 +40,9 @@
                 else:
                     decoded_text += message[i]
 
-
-            print(decoded_text)
-        vigenere_code()
-    </py-script>
+            Element('test-output').element.innerText = decoded_text
+            
+       
+</py-script>
 </body>
 </html>
