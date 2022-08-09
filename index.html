@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vigenere</title>
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+<script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+</head>
+<body>
+    <h1>Vigenere code</h1>
+    <py-script>
+        alphabet = 'abcdefghijklmnopqrstuvwxyz'
+        alphabet_list = list(alphabet)
+        def vigenere_code():
+            message = input('Type message: ')
+            keyword = input('Type keyword: ')
+            message = message.lower()
+            decoded_text = ''
+            premena = ''
+
+            keyword_index = 0
+            for i in range(0, len(message)):
+                if message[i] in alphabet_list:
+                    premena += keyword[keyword_index]
+                    keyword_index = (keyword_index + 1) % len(keyword)
+                else:
+                    premena += message[i]
+
+            for i in range(0, len(message)):
+                if message[i] in alphabet_list:
+                    index_final = alphabet.find(message[i]) - alphabet.find(premena[i])
+                    decoded_text += alphabet[index_final % 26]
+                else:
+                    decoded_text += message[i]
+
+
+            print(decoded_text)
+        vigenere_code()
+    </py-script>
+</body>
+</html>
