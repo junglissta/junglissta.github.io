@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="index.css"/>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,11 +10,12 @@
 <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
 </head>
 <body>
-    <h1>Vigenere code</h1>
-    <input type = "text" id = "message"/>
-    <h1>Key</h1>
-    <input type="text" id="keyword"/>
-    <button id = "submit-button" type = "submit" pys-onClick="vigenere_code">OK</button>
+    <p>Lil project for coding and decoding text</p>
+    <h1>Insert text to code</h1>
+    <input type="text" id="message"/>
+    <h1>Insert key for coding</h1>
+    <input type="text" id="keyword"/><br>
+    <button id ="submit-button" type ="submit" pys-onClick="vigenere_code">OK</button>
     <div id="test-output"></div>
 <py-script>
         alphabet = 'abcdefghijklmnopqrstuvwxyz'
