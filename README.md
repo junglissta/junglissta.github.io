@@ -1,6 +1,7 @@
 # junglissta.github.io
 vigenere project
 webpage for coding inputed text.
+url: junglissta.github.io
 1. Input text for coding
 2. Input keyword
 3. Click
